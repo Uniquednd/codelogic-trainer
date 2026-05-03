@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeLogic Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="logo">🧠 CodeLogic Trainer</h1>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="quiz-container">
+  <h2>Login</h2>
+  <input id="username" placeholder="Username"><br><br>
+  <input id="password" type="password" placeholder="Password"><br><br>
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- MAIN APP -->
+<div class="quiz-container" id="mainApp" style="display:none;">
+
+  <!-- ADMIN PANEL -->
+<div id="adminPanel" style="display:none;">
+  <h3>Admin Panel</h3>
+
+  <!-- MANUAL ADD -->
+  <h4>Add Question</h4>
+  <input id="adminTopic" placeholder="Topic (python/html/css/java)">
+  <input id="adminQ" placeholder="Question">
+  <input id="adminC1" placeholder="Choice 1">
+  <input id="adminC2" placeholder="Choice 2">
+  <input id="adminC3" placeholder="Choice 3">
+  <input id="adminC4" placeholder="Choice 4">
+  <input id="adminAns" placeholder="Correct (0-3)">
+  <button onclick="adminAddQuestion()">Add Question</button>
+
+  <hr>
+
+  <!-- FILE / LESSON INPUT -->
+  <h4>Generate from Lesson / File</h4>
+  <input type="file" id="fileUpload">
+  <br><br>
+  <textarea id="lessonText" placeholder="Or paste lesson text here..."></textarea>
+  <br>
+  <button onclick="generateFromLesson()">Generate Questions</button>
+
+  <br><br>
+  <button onclick="logout()">Logout</button>
+</div>
+  <!-- TOPIC SCREEN -->
+  <div id="topicScreen">
+    <h3>Select a Topic</h3>
+    <button onclick="startQuiz('python')">Python</button>
+    <button onclick="startQuiz('html')">HTML</button>
+    <button onclick="startQuiz('css')">CSS</button>
+    <button onclick="startQuiz('java')">Java</button>
+
+    <br><br>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quizScreen" style="display:none;">
+
+    <div class="status-bar">
+      <span id="score">Score: 0</span>
+      <span id="streak">Streak: 0</span>
+      <span id="timer">⏱ 10</span>
+    </div>
+
+    <div class="card">
+      <p id="question"></p>
+    </div>
+
+    <div id="choices"></div>
+
+    <p id="feedback"></p>
+
+    <button class="back-btn" onclick="goBack()">⬅ Change Topic</button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

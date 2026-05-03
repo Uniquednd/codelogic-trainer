@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00, #ff0080);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* LOGO */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+}
+
+/* MAIN BOX */
+.quiz-container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 420px;
+  text-align: center;
+}
+
+/* STATUS BAR */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* QUESTION */
+.card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* CHOICES GRID */
+#choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* BUTTONS */
+button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#choices button {
+  background: #4a90e2;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#choices button:hover {
+  transform: scale(1.05);
+}
+
+/* CORRECT / WRONG */
+#choices button.correct {
+  background: #2ed573 !important;
+}
+
+#choices button.wrong {
+  background: #ff4757 !important;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #222;
+  color: white;
+}
