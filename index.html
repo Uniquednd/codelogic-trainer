@@ -6,8 +6,24 @@
 </head>
 <body>
 
-<h1 class="logo">🧠 CodeLogic Trainer</h1>
+<!-- TOP BAR -->
+<div class="top-bar">
 
+  <div class="logo-container">
+
+    <img 
+      src="LOGO.png" 
+      alt="CodeLogic Logo"
+      class="logo-img"
+    >
+
+    <div class="logo-text">
+      CodeLogic Trainer
+    </div>
+
+  </div>
+
+</div>
 <!-- LOGIN SCREEN -->
 <div id="loginScreen" class="quiz-container">
   <h2>Login</h2>
@@ -31,7 +47,9 @@
   <input id="adminC2" placeholder="Choice 2">
   <input id="adminC3" placeholder="Choice 3">
   <input id="adminC4" placeholder="Choice 4">
-  <input id="adminAns" placeholder="Correct (0-3)">
+  <input id="adminAns" placeholder="Correct (1-4)">
+  <input id="maxAttempts" placeholder="Max Attempts Before Removal">
+  <input id="expireDays" placeholder="Expire After Days">
   <button onclick="adminAddQuestion()">Add Question</button>
 
   <hr>
@@ -43,6 +61,17 @@
   <textarea id="lessonText" placeholder="Or paste lesson text here..."></textarea>
   <br>
   <button onclick="generateFromLesson()">Generate Questions</button>
+  <hr>
+
+<h3>Used Questions Storage</h3>
+
+<div id="usedQuestionsBox"></div>
+
+<br>
+
+<button onclick="loadUsedQuestions()">
+  Refresh Used Questions
+</button>
 
   <br><br>
   <button onclick="logout()">Logout</button>
